@@ -1,5 +1,21 @@
+# mac
 .DS_Store
+
+# outputs / artifacts (do not commit)
 logs/
 data_raw/
 data_clean/
 outputs/
+
+# optional: rendered paper outputs
+paper/**/*.pdf
+paper/**/*.html
+
+# Python / R caches
+__pycache__/
+*.pyc
+.Rhistory
+.RData
+.Rproj.user/
+renv/library/
+.venv/
