@@ -1,0 +1,5 @@
+[verify] config=configs/default.yml
+[verify] git status:
+fatal: not a git repository (or any of the parent directories): .git
+
+[verify] required artifacts checks:

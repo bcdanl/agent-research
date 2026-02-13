@@ -1,0 +1,5 @@
+{
+  "note": "Replace scripts/collect_stub.py with your real collector in collect_py/",
+  "config_used": "configs/default.yml",
+  "created_at": "20260212_205526"
+}

@@ -1,0 +1,13 @@
+[verify] config=configs/default.yml
+[verify] git status:
+fatal: not a git repository (or any of the parent directories): .git
+
+[verify] required artifacts checks:
+
+[verify] smoke run: R session info
+R version 4.3.2 (2023-10-31) 
+
+[verify] python version
+Python 3.9.6
+
+[verify] OK

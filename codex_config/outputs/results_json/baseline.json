@@ -1,0 +1,13 @@
+{
+  "config_used": "configs/default.yml",
+  "model": "stub_lm",
+  "coef": {
+    "intercept": 0.1,
+    "x": 0.5
+  },
+  "se": {
+    "intercept": 0.01,
+    "x": 0.02
+  },
+  "n": 1234
+}

@@ -1,0 +1,5 @@
+[draft_results] config=configs/default.yml
+Wrote: paper/sections/results.md
+Wrote: paper/sections/robustness.md
+Config: configs/default.yml 
+[draft_results] done. log=logs/draft/draft_20260212_205703.log

@@ -1,0 +1,100 @@
+# codex/rules/academic.rules
+# Execution policy for academic workflow: allow common safe commands,
+# prompt for risky remote writes, forbid destructive commands.
+
+# -------------------------
+# Git: safe read operations
+# -------------------------
+prefix_rule(
+    pattern = ["git", ["status", "diff", "log", "branch", "show"]],
+    decision = "allow",
+    justification = "Safe git read operations.",
+)
+
+# Git: local write operations (still okay)
+prefix_rule(
+    pattern = ["git", ["add", "commit", "checkout", "merge", "stash", "fetch", "pull"]],
+    decision = "allow",
+    justification = "Local repo operations are allowed.",
+)
+
+# Git: remote write — prompt
+prefix_rule(
+    pattern = ["git", "push"],
+    decision = "prompt",
+    justification = "Remote write. Prompt before pushing.",
+)
+
+# -------------------------
+# GitHub CLI — prompt (API actions can be powerful)
+# -------------------------
+prefix_rule(
+    pattern = ["gh"],
+    decision = "prompt",
+    justification = "GitHub CLI can mutate remote state; prompt for safety.",
+)
+
+# -------------------------
+# Build / render tools
+# -------------------------
+prefix_rule(
+    pattern = ["quarto", "render"],
+    decision = "allow",
+    justification = "Rendering is expected.",
+)
+
+prefix_rule(
+    pattern = ["Rscript"],
+    decision = "allow",
+    justification = "R scripts are core to analysis and figures.",
+)
+
+prefix_rule(
+    pattern = ["python3"],
+    decision = "allow",
+    justification = "Python is used for data collection and utility scripts.",
+)
+
+# LaTeX + PDF utilities (optional for papers/slides)
+prefix_rule(
+    pattern = [["xelatex", "latexmk", "bibtex", "pdfinfo", "pdf2svg", "pdftk"]],
+    decision = "allow",
+    justification = "Academic compilation utilities.",
+)
+
+# -------------------------
+# Common shell utilities (safe)
+# -------------------------
+prefix_rule(
+    pattern = [["ls", "wc", "sort", "mkdir", "chmod"]],
+    decision = "allow",
+    justification = "Safe local filesystem utilities.",
+)
+
+# -------------------------
+# Project scripts (preferred entrypoints)
+# -------------------------
+prefix_rule(
+    pattern = ["bash", "scripts/verify.sh"],
+    decision = "allow",
+    justification = "Verification script is required at task end.",
+)
+prefix_rule(
+    pattern = ["bash", ["scripts/run_collect.sh", "scripts/run_clean.sh", "scripts/run_baseline.sh", "scripts/run_robustness.sh", "scripts/draft_results.sh"]],
+    decision = "allow",
+    justification = "Standard pipeline entrypoints.",
+)
+
+# -------------------------
+# Forbidden destructive commands
+# -------------------------
+prefix_rule(
+    pattern = ["rm", "-rf"],
+    decision = "forbidden",
+    justification = "Destructive. Do not use rm -rf in this workflow.",
+)
+prefix_rule(
+    pattern = ["git", "reset", "--hard"],
+    decision = "forbidden",
+    justification = "Destructive. Use a new branch or revert commits instead.",
+)

@@ -1,0 +1,4 @@
+[run_collect] config=configs/default.yml
+[run_collect] python=Python 3.9.6
+Wrote data_raw/raw_stub_20260212_205526.json
+[run_collect] done. log=logs/collect/collect_20260212_205526.log

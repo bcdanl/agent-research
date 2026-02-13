@@ -1,0 +1,6 @@
+[run_clean] config=configs/default.yml
+Config: configs/default.yml 
+Wrote: data_clean/clean_stub_20260212_205633.csv 
+R version:
+[1] "R version 4.3.2 (2023-10-31)"
+[run_clean] done. log=logs/clean/clean_20260212_205632.log

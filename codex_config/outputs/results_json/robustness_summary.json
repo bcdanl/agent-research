@@ -1,0 +1,7 @@
+{
+  "config_used": "configs/default.yml",
+  "n_specs": 3,
+  "coef_x_min": 0.47,
+  "coef_x_max": 0.52,
+  "coef_x_mean": 0.4933
+}

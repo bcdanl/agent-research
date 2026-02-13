@@ -1,0 +1,4 @@
+[run_baseline] config=configs/default.yml
+Wrote: outputs/results_json/baseline.json 
+Wrote: outputs/tables/t1_baseline.md 
+[run_baseline] done. log=logs/models/baseline_20260212_205645.log

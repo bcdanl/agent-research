@@ -1,0 +1,19 @@
+# .codex/config.toml — project-scoped defaults for Codex
+
+# Prompt for approvals only when rules require it, or when Codex explicitly asks.
+approval_policy = "on-request"
+
+# Keep transcripts (useful for research audit trails).
+history.persistence = "save-all"
+
+# Put Codex logs inside the repo (easy to archive with a paper replication package).
+log_dir = "logs/codex"
+
+# Leave smart rule suggestions on (default true); rules still control actual execution.
+features.request_rule = true
+
+# Prefer showing plan mode controls (default true, stable).
+features.collaboration_modes = true
+
+# Keep shell tool enabled (default true).
+features.shell_tool = true
