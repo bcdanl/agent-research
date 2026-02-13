@@ -1,21 +1,28 @@
-# mac
+cat > .gitignore << 'EOF'
 .DS_Store
 
-# outputs / artifacts (do not commit)
+# artifacts (do not commit)
 logs/
 data_raw/
 data_clean/
 outputs/
-
-# optional: rendered paper outputs
 paper/**/*.pdf
 paper/**/*.html
 
-# Python / R caches
-__pycache__/
-*.pyc
+# artifacts under codex_config too (your current layout)
+codex_config/logs/
+codex_config/data_raw/
+codex_config/data_clean/
+codex_config/outputs/
+codex_config/paper/**/*.pdf
+codex_config/paper/**/*.html
+
+# R / Python caches
 .Rhistory
 .RData
 .Rproj.user/
-renv/library/
+__pycache__/
+*.pyc
 .venv/
+renv/library/
+EOF
